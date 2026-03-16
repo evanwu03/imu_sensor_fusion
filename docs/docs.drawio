@@ -1,0 +1,16 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="O--WKBzsO0Jo4_GO3PbQ">
+    <mxGraphModel dx="1360" dy="963" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ainLi33GgQbYzg2RrP6c-2" value="To-Do:&amp;nbsp;&lt;div&gt;- Generate CubeMX files&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Setup I2C Driver in CubeMX&lt;/div&gt;&lt;div&gt;- Setup UART drivers&lt;/div&gt;&lt;div&gt;- Download drivers for accelerometer and gyroscope&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Print IMU data to serial monitor&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Set up DMA in CubeMX&amp;nbsp;&lt;/span&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Implement Complimentary filter&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Test complimentary filter&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Implement Circular buffer&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="28" width="300" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ainLi33GgQbYzg2RrP6c-3" value="Peripheral&#xa;   ↓&#xa;DMA&#xa;   ↓&#xa;Ping-pong buffers&#xa;   ↓&#xa;ISR copies into&#xa;   ↓&#xa;Circular buffer (head/tail)&#xa;   ↓&#xa;Application parser" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="20" y="230" width="170" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

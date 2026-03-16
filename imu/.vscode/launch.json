@@ -1,0 +1,32 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug (OpenOCD)",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/debug/blinky.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "interface": "swd",
+            "device": "STM32H7532ZI",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "raw",
+            "configFiles": [
+                "/usr/share/openocd/scripts/interface/stlink.cfg",
+                "/usr/share/openocd/scripts/target/stm32h7x.cfg"
+            ],
+            "preLaunchCommands": [
+                "set mem inaccessible-by-default off",
+                "monitor reset"
+            ],
+            "postLaunchCommands": [
+                "monitor reset init",
+                "monitor sleep 200"
+            ],
+            "armToolchainPath": "/usr/bin/",
+            "gdbPath": "/usr/bin/gdb-multiarch"
+        }
+    ]
+}
