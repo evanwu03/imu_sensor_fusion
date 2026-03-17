@@ -1,14 +1,116 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5" pages="2">
   <diagram name="Page-1" id="O--WKBzsO0Jo4_GO3PbQ">
     <mxGraphModel dx="1360" dy="963" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ainLi33GgQbYzg2RrP6c-2" value="To-Do:&amp;nbsp;&lt;div&gt;- Generate CubeMX files&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Setup I2C Driver in CubeMX&lt;/div&gt;&lt;div&gt;- Setup UART drivers&lt;/div&gt;&lt;div&gt;- Download drivers for accelerometer and gyroscope&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Print IMU data to serial monitor&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Set up DMA in CubeMX&amp;nbsp;&lt;/span&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Implement Complimentary filter&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Test complimentary filter&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Implement Circular buffer&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="20" y="28" width="300" height="190" as="geometry" />
+        <mxCell id="ainLi33GgQbYzg2RrP6c-2" value="To-Do:&amp;nbsp;&lt;div&gt;- Generate CubeMX files&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Setup I2C Driver in CubeMX&lt;/div&gt;&lt;div&gt;- Setup UART drivers&lt;/div&gt;&lt;div&gt;- Download drivers for accelerometer and gyroscope&lt;/div&gt;&lt;div&gt;- Implement generic write/read function for library&lt;/div&gt;&lt;div&gt;- Define data packets for IMU&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Print IMU data to serial monito&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;r&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Set up DMA in CubeMX&amp;nbsp;&lt;/span&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Implement Double Buffering&lt;/div&gt;&lt;div&gt;- Implement Complimentary filter&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Test complimentary filter&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Visualize data in Python/Matlab&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="20" y="8" width="300" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="ainLi33GgQbYzg2RrP6c-3" value="Peripheral&#xa;   ↓&#xa;DMA&#xa;   ↓&#xa;Ping-pong buffers&#xa;   ↓&#xa;ISR copies into&#xa;   ↓&#xa;Circular buffer (head/tail)&#xa;   ↓&#xa;Application parser" style="text;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="20" y="230" width="170" height="180" as="geometry" />
+        <mxCell id="ainLi33GgQbYzg2RrP6c-3" value="Idea 1: &#xa;Peripheral&#xa;   ↓&#xa;DMA&#xa;   ↓&#xa;Ping-pong buffers&#xa;   ↓&#xa;ISR copies into&#xa;   ↓&#xa;Circular buffer (head/tail)&#xa;   ↓&#xa;Application parser" style="text;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="20" y="220" width="170" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="PeHljyLFHay8iF1rPoLL-1" value="Design Questions&lt;div&gt;- Determine output data rate (ODR) for Accel + Gyro&lt;/div&gt;&lt;div&gt;- Based on output rate define size of double buffer&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Should we use the lsm9d1 internal FIFO?&lt;/div&gt;&lt;div&gt;- Should filtering happen on MCU or host PC for now. Perhaps we do it on host PC then implement in MCU&lt;/div&gt;&lt;div&gt;- How will different sensor modes be handled? FSM?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="425" width="590" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Ae8STe2qrvfPnH-SfBnn" name="Page-2">
+    <mxGraphModel dx="1432" dy="1014" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PgXgIErbtofydOsdPhDl-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-2" target="PgXgIErbtofydOsdPhDl-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-2" target="PgXgIErbtofydOsdPhDl-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-28" value="init_failed" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="PgXgIErbtofydOsdPhDl-14">
+          <mxGeometry x="-0.3671" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-2" value="IMU_INIT" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-3" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;Finite State Machine&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="270" y="100" width="310" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-5" target="PgXgIErbtofydOsdPhDl-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-29" value="timeout period exceeded ||&amp;nbsp;&lt;div&gt;&amp;nbsp;DMA overflow ||&amp;nbsp;&lt;/div&gt;&lt;div&gt;Bus transaction fail&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="PgXgIErbtofydOsdPhDl-7">
+          <mxGeometry x="-0.2923" y="-1" relative="1" as="geometry">
+            <mxPoint x="33" y="19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-5" value="IMU_READ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-8" target="PgXgIErbtofydOsdPhDl-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-26" value="if recovery_failed&lt;div&gt;&amp;nbsp;&amp;amp;&amp;amp; retry count &amp;gt;= MAX_RETRIES&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="PgXgIErbtofydOsdPhDl-17">
+          <mxGeometry x="-0.321" y="1" relative="1" as="geometry">
+            <mxPoint x="42" y="21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-8" target="PgXgIErbtofydOsdPhDl-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="500" />
+              <mxPoint x="245" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-27" value="recovery_sucess" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="PgXgIErbtofydOsdPhDl-22">
+          <mxGeometry x="0.0925" y="-3" relative="1" as="geometry">
+            <mxPoint x="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-8" value="IMU_FAULT" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-5" target="PgXgIErbtofydOsdPhDl-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="215" y="320" />
+              <mxPoint x="130" y="320" />
+              <mxPoint x="130" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-30" value="Read next sample&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="PgXgIErbtofydOsdPhDl-10">
+          <mxGeometry x="-0.1892" y="4" relative="1" as="geometry">
+            <mxPoint x="14" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-12" value="&lt;div&gt;Bring up peripherals&lt;/div&gt;Self Test Accel + Gryo&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="185" y="170" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-13" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;State Descriptions&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;b&gt;IMU_INIT&lt;/b&gt;: prepare IMU so normal acquisition is possible. one time setup procedure&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Entry:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Initialize Peripherals&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Configure IMU registers&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;When:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- On system boot&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;IMU_READ&lt;/b&gt;: Repeatedly sample new IMU data and send log sample to debug output&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Entry:&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- acquire next sample&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- store in DMA buffer&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- send to output console&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;When&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- initialization suceeds&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- succesful recovery from fault state&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;IMU_FAULT&lt;/b&gt;:&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;detected fault, log it, stop trusting current sample path, attempt automatic recovery&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Entry:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- stop DMA&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- soft reset IMU&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- reinitialize registers&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- restart acquisition&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;When:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Timeout period to receive new sample has been exceeded&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Bus transactions fails&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- DMA overflow&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Self-test failure do not continue to IMU_READ&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Log Error to console&lt;/span&gt;&lt;div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;IMU_FATAL&lt;/b&gt;:&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;recovery attempts exhausted, wait for manual intervention&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space-collapse: preserve;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Entry: &lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Stop all sample acquisitions&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Blink failure LED&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Log Fatal state to console&lt;/span&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/blockquote&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;When:&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;recovery fails and retry counts &amp;gt;= MAX_RETRIES&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="185" y="550" width="530" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-16" value="IMU_FATAL" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="PgXgIErbtofydOsdPhDl-8" target="PgXgIErbtofydOsdPhDl-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="320" />
+              <mxPoint x="720" y="320" />
+              <mxPoint x="720" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PgXgIErbtofydOsdPhDl-31" value="if recovery_failed&lt;div&gt;&amp;nbsp;&amp;amp;&amp;amp; retry count &amp;lt; MAX_RETRIES&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="PgXgIErbtofydOsdPhDl-24">
+          <mxGeometry x="0.3042" y="-1" relative="1" as="geometry">
+            <mxPoint x="11" y="-50" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
