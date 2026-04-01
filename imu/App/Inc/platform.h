@@ -4,8 +4,15 @@
 
 
 #include "stdint.h"
+#include "../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h"
 
 
+typedef struct { 
+    void *hbus;
+    uint8_t i2c_address;
+    GPIO_TypeDef *cs_port;
+    uint16_t cs_pin;
+} sensbus_t; 
 
 /// @brief Platform specific imu write HAL function
 /// @param handle handle to imu context struct
